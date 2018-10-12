@@ -8,7 +8,8 @@ namespace Lab04_TicTacToe
         static void Main(string[] args)
         {
             Board board = new Board();
-
+            board.DisplayBoard();
+            Console.ReadLine();
         }
 
         static void PlayGame()
