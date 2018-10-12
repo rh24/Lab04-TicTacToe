@@ -7,9 +7,11 @@ namespace Lab04_TicTacToe
     {
         static void Main(string[] args)
         {
-            Board board = new Board();
-            board.DisplayBoard();
-            Console.ReadLine();
+            //Board board = new Board();
+            //board.DisplayBoard();
+            //Console.ReadLine();
+
+            PlayGame();
         }
 
         static void PlayGame()
@@ -17,14 +19,16 @@ namespace Lab04_TicTacToe
             // TODO: Instantiate your players
             Player p1 = new Player
             {
-                Name = "X",
-                IsTurn = true
+                Name = "Rebecca",
+                IsTurn = true,
+                Marker = "X"
             };
 
             Player p2 = new Player
             {
-                Name = "O",
-                IsTurn = false
+                Name = "Wen",
+                IsTurn = false,
+                Marker = "O"
             };
 
             // Create the Game
