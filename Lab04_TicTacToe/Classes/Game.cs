@@ -55,20 +55,25 @@ namespace Lab04_TicTacToe.Classes
                 }
             }
 
-            Player previousPlayer = PlayerOne.IsTurn ? PlayerTwo : PlayerOne;
-
             // The else statement ternary returns the previous player instead of the next player
             while (!CheckForWinner(Board))
             {
                 Board.DisplayBoard();
 
+
                 if (numberOfFreeSpaces > 0)
                 {
                     NextPlayer().TakeTurn(Board);
                     SwitchPlayer();
+                    numberOfFreeSpaces--;
                 }
                 else Console.WriteLine("It's a tie!");
             }
+
+            Player previousPlayer = PlayerOne.IsTurn ? PlayerTwo : PlayerOne;
+
+            if (CheckForWinner(Board)) previousPlayer.Name = $"{previousPlayer.Name} is the winner! Go player ${previousPlayer.Marker}!";
+            else if (numberOfFreeSpaces == 0) previousPlayer.Name = "It's a tie!";
 
             return previousPlayer;
         }

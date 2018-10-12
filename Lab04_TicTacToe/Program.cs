@@ -36,7 +36,7 @@ namespace Lab04_TicTacToe
 
             // Play the Game
             // Output the winner
-            Console.WriteLine(game.Play());
+            Console.WriteLine(game.Play().Name);
         }
     }
 }
