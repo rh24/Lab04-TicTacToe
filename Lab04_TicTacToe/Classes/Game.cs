@@ -67,7 +67,10 @@ namespace Lab04_TicTacToe.Classes
                     SwitchPlayer();
                     numberOfFreeSpaces--;
                 }
-                else Console.WriteLine("It's a tie!");
+                else
+                {
+                    break;
+                }
             }
 
             Player previousPlayer = PlayerOne.IsTurn ? PlayerTwo : PlayerOne;
