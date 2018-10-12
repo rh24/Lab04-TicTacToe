@@ -3,7 +3,14 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <RootNamespace>Lab04_TicTacToe</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Classes\Game.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Classes\Game.cs" />
+  </ItemGroup>
 
 </Project>
