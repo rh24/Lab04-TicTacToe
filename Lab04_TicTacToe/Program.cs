@@ -31,8 +31,8 @@ namespace Lab04_TicTacToe
             Game game = new Game(p1, p2);
 
             // Play the Game
-
             // Output the winner
+            Console.WriteLine(game.Play());
         }
     }
 }
