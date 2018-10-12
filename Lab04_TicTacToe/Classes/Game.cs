@@ -45,7 +45,21 @@ namespace Lab04_TicTacToe.Classes
 			 Once a winner is determined, display the board and return a winner 
 			 */
 
-            if (!CheckForWinner)
+            int numberOfFreeSpaces = 0;
+
+            for (int i = 0; i < Board.Length(1); i++)
+            {
+                for (int j = 0; j < Board[i].Length; j++)
+                {
+                    if (Int32.TryParse(Board[i][j], out isNum)) numberOfFreeSpaces++;
+                }
+            }
+
+            Board.DisplayBoard();
+
+            if (!CheckForWinner(Board) && numberOfFreeSpaces > 0) NextPlayer().GetPosition(Board);
+            else if (numberOfFreeSpaces == 0) Console.WriteLine("It's a tie!");
+            else (PlayerOne.IsTurn ? PlayerTwo : PlayerOne);
         }
 
 
