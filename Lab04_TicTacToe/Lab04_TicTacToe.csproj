@@ -5,12 +5,4 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Classes\Game.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Classes\Game.cs" />
-  </ItemGroup>
-
 </Project>

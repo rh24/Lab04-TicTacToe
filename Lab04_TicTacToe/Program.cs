@@ -15,17 +15,24 @@ namespace Lab04_TicTacToe
         static void PlayGame()
         {
             // TODO: Instantiate your players
+            Player p1 = new Player
+            {
+                Name = "X",
+                IsTurn = true
+            };
+
+            Player p2 = new Player
+            {
+                Name = "O",
+                IsTurn = false
+            };
+
             // Create the Game
+            Game game = new Game(p1, p2);
+
             // Play the Game
+
             // Output the winner
-
-            Player p1 = new Player();
-            p1.Name = "X";
-            p1.IsTurn = true;
-
-            Player p2 = new Player();
-            p2.Name = "O";
-            p2.IsTurn = false;
         }
     }
 }

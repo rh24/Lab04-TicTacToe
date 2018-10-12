@@ -47,11 +47,11 @@ namespace Lab04_TicTacToe.Classes
 
             int numberOfFreeSpaces = 0;
 
-            for (int i = 0; i < Board.GetLength(1); i++)
+            for (int i = 0; i < Board.GameBoard.GetLength(1); i++)
             {
-                for (int j = 0; j < Board[i].Length; j++)
+                for (int j = 0; j < Board.GameBoard.GetLength(0); j++)
                 {
-                    if (Int32.TryParse(Board[i][j], out isNum)) numberOfFreeSpaces++;
+                    if (Int32.TryParse(Board.GameBoard[i, j], out int result)) numberOfFreeSpaces++;
                 }
             }
 
