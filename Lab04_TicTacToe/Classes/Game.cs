@@ -144,7 +144,5 @@ namespace Lab04_TicTacToe.Classes
                 PlayerTwo.IsTurn = false;
             }
         }
-
-
     }
 }
