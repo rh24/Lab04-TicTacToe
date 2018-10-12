@@ -60,17 +60,13 @@ namespace Lab04_TicTacToe.Classes
             {
                 Board.DisplayBoard();
 
-
                 if (numberOfFreeSpaces > 0)
                 {
                     NextPlayer().TakeTurn(Board);
                     SwitchPlayer();
                     numberOfFreeSpaces--;
                 }
-                else
-                {
-                    break;
-                }
+                else break;
             }
 
             Player previousPlayer = PlayerOne.IsTurn ? PlayerTwo : PlayerOne;
