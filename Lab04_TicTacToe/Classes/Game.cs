@@ -98,7 +98,7 @@ namespace Lab04_TicTacToe.Classes
 
                 // TODO:  Determine a winner has been reached. 
                 // return true if a winner has been reached. 
-
+                if (a == b == c) return true;
             }
 
             return false;
