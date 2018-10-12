@@ -72,7 +72,7 @@ namespace Lab04_TicTacToe.Classes
 
             Player previousPlayer = PlayerOne.IsTurn ? PlayerTwo : PlayerOne;
 
-            if (CheckForWinner(Board)) previousPlayer.Name = $"{previousPlayer.Name} is the winner! Go player ${previousPlayer.Marker}!";
+            if (CheckForWinner(Board)) previousPlayer.Name = $"{previousPlayer.Name} is the winner! Go player {previousPlayer.Marker}!";
             else if (numberOfFreeSpaces == 0) previousPlayer.Name = "It's a tie!";
 
             return previousPlayer;
