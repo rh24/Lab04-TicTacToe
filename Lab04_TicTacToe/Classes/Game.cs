@@ -57,6 +57,7 @@ namespace Lab04_TicTacToe.Classes
 
             Board.DisplayBoard();
 
+            // The else statement ternary returns the previous player instead of the next player
             if (!CheckForWinner(Board) && numberOfFreeSpaces > 0) NextPlayer().GetPosition(Board);
             else if (numberOfFreeSpaces == 0) Console.WriteLine("It's a tie!");
             else (PlayerOne.IsTurn ? PlayerTwo : PlayerOne);
