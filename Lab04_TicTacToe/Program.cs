@@ -33,6 +33,9 @@ namespace Lab04_TicTacToe
             // Play the Game
             // Output the winner
             Console.WriteLine(game.Play().Name);
+            Board board = new Board();
+            board.GameBoard = new string[,] { { "X", "X", "X" }, { "4", "5", "6" }, { "7", "8", "9" } };
+            Console.WriteLine(game.CheckForWinner(board));
         }
     }
 }

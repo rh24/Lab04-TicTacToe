@@ -31,9 +31,29 @@ namespace Lab04_Tests
 
         [Theory]
         [InlineData(false)]
-        public void CheckWinner(bool expected)
+        public void CheckWinner1(bool expected)
         {
+            board.GameBoard = new string[,] { { "1", "O", "3" }, { "4", "5", "6" }, { "7", "8", "9" } };
+
+            Assert.Equal(expected, game.CheckForWinner(board));
+        }
+
+        [Theory]
+        [InlineData(true)]
+        public void CheckWinner2(bool expected)
+        {
+            game.Board = board;
             board.GameBoard = new string[,] { { "X", "X", "X" }, { "4", "5", "6" }, { "7", "8", "9" } };
+
+            Assert.Equal(expected, game.CheckForWinner(board));
+        }
+
+        [Theory]
+        [InlineData(true)]
+        public void CheckWinner3(bool expected)
+        {
+            game.Board = board;
+            board.GameBoard = new string[,] { { "1", "X", "O" }, { "4", "X", "O" }, { "7", "8", "O" } };
 
             Assert.Equal(expected, game.CheckForWinner(board));
         }
