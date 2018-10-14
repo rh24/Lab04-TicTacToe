@@ -76,7 +76,6 @@ namespace Lab04_Tests
             Assert.Equal(expected, game.CheckForWinner(board));
         }
 
-        // Test that there is a switch in players between turns
         /// <summary>
         /// p1 is the starting player because its IsTurn property = true.
         /// For this test to pass, p2.IsTurn should be true and p1.IsTurn should be false.
