@@ -22,7 +22,7 @@ namespace Lab04_Tests
         public Game game = new Game(p1, p2);
 
         /// <summary>
-        /// Check that the board is being created with proper values
+        /// Check that the board is being created with proper values.
         /// </summary>
         [Fact]
         public void DisplayBoard()
@@ -36,9 +36,9 @@ namespace Lab04_Tests
         }
 
         /// <summary>
-        /// Test when no one wins
+        /// Test when no one wins.
         /// </summary>
-        /// <param name="expected"></param>
+        /// <param name="expected">return value of CheckForWinner method</param>
         [Theory]
         [InlineData(false)]
         public void CheckWinner1(bool expected)
@@ -51,7 +51,7 @@ namespace Lab04_Tests
         /// <summary>
         /// Test where X is the winner
         /// </summary>
-        /// <param name="expected"></param>
+        /// <param name="expected">return value of CheckForWinner method</param>
         [Theory]
         [InlineData(true)]
         public void CheckWinner2(bool expected)
@@ -65,7 +65,7 @@ namespace Lab04_Tests
         /// <summary>
         /// Test when O is the winner
         /// </summary>
-        /// <param name="expected"></param>
+        /// <param name="expected">return value of CheckForWinner method</param>
         [Theory]
         [InlineData(true)]
         public void CheckWinner3(bool expected)
@@ -80,7 +80,7 @@ namespace Lab04_Tests
         /// p1 is the starting player because its IsTurn property = true.
         /// For this test to pass, p2.IsTurn should be true and p1.IsTurn should be false.
         /// </summary>
-        /// <param name="expected"></param>
+        /// <param name="expected">if players switched, this will be true, else, false</param>
         [Theory]
         [InlineData(true)]
         public void SwitchPlayers(bool expected)
