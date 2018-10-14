@@ -17,7 +17,9 @@ namespace Lab04_TicTacToe.Classes
             {"7", "8", "9"},
         };
 
-
+        /// <summary>
+        /// This prints the GameBoard property to the console.
+        /// </summary>
         public void DisplayBoard()
         {
 
