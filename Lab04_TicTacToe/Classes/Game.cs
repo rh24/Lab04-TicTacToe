@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab04_TicTacToe.Classes
 {
-    class Game
+    public class Game
     {
         public Player PlayerOne { get; set; }
         public Player PlayerTwo { get; set; }
@@ -112,7 +112,13 @@ namespace Lab04_TicTacToe.Classes
 
                 // TODO:  Determine a winner has been reached. 
                 // return true if a winner has been reached. 
-                if (a == b && b == c) return true;
+                if (a == b && b == c)
+                {
+                    if (PlayerOne.Marker == a) Winner = PlayerOne;
+                    else Winner = PlayerTwo;
+
+                    return true;
+                };
             }
 
             return false;

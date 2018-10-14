@@ -4,12 +4,13 @@ using System.Text;
 
 namespace Lab04_TicTacToe.Classes
 {
-    class Board
+    public class Board
     {
         /// <summary>
-        /// Tic Tac Toe Gameboard states
+        /// Tic Tac Toe Gameboard states. This is an instance field. I can manipulate it within my class, but it's not a property because I don't want to be able to manipulate this data outside of the class itself.
         /// </summary>
-        public string[,] GameBoard = new string[,]
+        public string[,] GameBoard { get; set; } =
+        new string[,]
         {
             {"1", "2", "3"},
             {"4", "5", "6"},
