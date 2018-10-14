@@ -90,5 +90,22 @@ namespace Lab04_Tests
 
             Assert.Equal(expected, switchedPlayers);
         }
+
+        /// <summary>
+        /// Since we cannot test Console.ReadLine, this method will be testing for whether or not PositionForNumber can take an input and give me a position in the GameBoard array. I will test this by setting the string located in the GameBoard at the returned position to the marker of the test player p1, whose marker is "X".
+        /// </summary>
+        [Theory]
+        [InlineData(true, 1, 0, 0)]
+        [InlineData(true, 2, 0, 1)]
+        [InlineData(true, 4, 1, 0)]
+        public void PlayerInputCorrespondsToIndexOfGameBoardArray(bool expected, int position, int expectedRowIndex, int expectedColumnIndex)
+        {
+            int row = Player.PositionForNumber(position).Row;
+            int column = Player.PositionForNumber(position).Column;
+            board.GameBoard[row, column] = p1.Marker;
+            bool xInCorrectPosition = (board.GameBoard[expectedRowIndex, expectedColumnIndex] == "X");
+
+            Assert.Equal(expected, xInCorrectPosition);
+        }
     }
 }
