@@ -62,7 +62,7 @@ namespace Lab04_TicTacToe.Classes
         /// This method is called in the Game class instance method Play. It is called repeatedly in a while loop until there is either a winner or a tie. The player will be asked to pick a position on the game board. The position is checked for whether or not it is already occupied. If it is not occupied, the existing num string is replaced with the player's marker.
         /// </summary>
         /// <param name="board">Board instance</param>
-        public void TakeTurn(Board board)
+        public bool TakeTurn(Board board)
         {
             IsTurn = true;
 
@@ -74,10 +74,12 @@ namespace Lab04_TicTacToe.Classes
             if (Int32.TryParse(board.GameBoard[position.Row, position.Column], out int _))
             {
                 board.GameBoard[position.Row, position.Column] = Marker;
+                return true;
             }
             else
             {
                 Console.WriteLine("This space is already occupied");
+                return false;
             }
         }
     }
