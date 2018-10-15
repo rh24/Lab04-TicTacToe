@@ -45,26 +45,16 @@ namespace Lab04_TicTacToe.Classes
 			 Once a winner is determined, display the board and return a winner 
 			 */
 
-            int numberOfFreeSpaces = 0;
+            int validTurns = 1;
 
-            for (int i = 0; i < Board.GameBoard.GetLength(1); i++)
-            {
-                for (int j = 0; j < Board.GameBoard.GetLength(0); j++)
-                {
-                    if (Int32.TryParse(Board.GameBoard[i, j], out int result)) numberOfFreeSpaces++;
-                }
-            }
-
-            // The else statement ternary returns the previous player instead of the next player
-            while (!CheckForWinner(Board))
+            while (!CheckForWinner(Board) && validTurns <= 9)
             {
                 Board.DisplayBoard();
 
-                if (numberOfFreeSpaces > 0)
+                if (NextPlayer().TakeTurn(Board))
                 {
-                    NextPlayer().TakeTurn(Board);
+                    validTurns++;
                     SwitchPlayer();
-                    numberOfFreeSpaces--;
                 }
                 else break;
             }
@@ -72,7 +62,7 @@ namespace Lab04_TicTacToe.Classes
             Player previousPlayer = PlayerOne.IsTurn ? PlayerTwo : PlayerOne;
 
             if (CheckForWinner(Board)) previousPlayer.Name = $"{previousPlayer.Name} is the winner! Go player {previousPlayer.Marker}!";
-            else if (numberOfFreeSpaces == 0) previousPlayer.Name = "It's a tie!";
+            else if (validTurns > 9) previousPlayer.Name = "It's a tie!";
 
             return previousPlayer;
         }
